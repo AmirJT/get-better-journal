@@ -21,7 +21,7 @@ module.exports = {
     }
 
     if (!token) {
-      throw new AuthenticationError("Not authenticated");
+      return req; 
     }
 
     try {
