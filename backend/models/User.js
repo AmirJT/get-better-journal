@@ -17,11 +17,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  profileImage: {
-    type: String,
-    default: "https://via.placeholder.com/150",
-  },
-}, { timestamps: true }); 
+});
 
 const User = mongoose.model("User", UserSchema);
 module.exports = User;

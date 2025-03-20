@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const Journal = require("../models/Journal");
 const { AuthenticationError } = require("apollo-server-express");
-const getQuote = require("../services/quoteService");
+const getQuote = require("../services/quoteService"); 
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -17,61 +17,20 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError("Not authenticated");
       }
-    
-      try {
-        console.log("Fetching user data for user ID:", context.user.id); 
-    
-        const user = await User.findById(context.user.id);
-        if (!user) {
-          throw new Error("User not found in database");
-        }
-    
-        if (!user.createdAt) {
-          user.createdAt = new Date(); 
-          await user.save(); 
-        }
-    
-        // Fetch user's journal data
-        const journals = await Journal.find({ user: context.user.id });
-    
-        const totalEntries = journals.length;
-        const moodAverage = totalEntries > 0 
-          ? (journals.reduce((sum, j) => sum + j.mood, 0) / totalEntries).toFixed(2) 
-          : "N/A";
-    
-        console.log("User found:", user.username, "| Total Journals:", totalEntries); 
-    
-        return {
-          _id: user._id,
-          username: user.username,
-          email: user.email,
-          profileImage: user.profileImage || "https://via.placeholder.com/150", 
-          createdAt: user.createdAt ? user.createdAt.toISOString() : new Date().toISOString(), 
-          totalEntries,
-          moodAverage
-        };
-      } catch (err) {
-        console.error("❌ Error fetching user data:", err); 
-        throw new Error("Failed to fetch user data");
-      }
+      return await User.findById(context.user.id);
     },
-  
 
     getJournals: async (_, __, context) => {
       if (!context.user) {
         throw new AuthenticationError("Not authenticated");
       }
-      try {
-        const journals = await Journal.find({ user: context.user.id }).sort({ createdAt: -1 });
-
-        return journals.map(journal => ({
-          ...journal._doc,
-          date: journal.createdAt.toISOString().split("T")[0] 
-        }));
-      } catch (err) {
-        console.error("Error fetching journals:", err);
-        throw new Error("Failed to fetch journals");
-      }
+      const journals = await Journal.find({ user: context.user.id }).sort({ date: -1 });
+      return journals.map(journal => ({
+        ...journal._doc,
+        date: new Date(journal.date).toLocaleDateString("en-US", {
+          timeZone: "America/Los_Angeles" 
+        })
+      }));
     },
   },
 
@@ -115,21 +74,15 @@ const resolvers = {
           tasks,
           happiness,
           improvement,
-          quote,
-          createdAt: new Date() 
+          quote, 
         });
 
-        return {
-          ...newJournal._doc,
-          date: newJournal.createdAt.toISOString().split("T")[0] 
-        };
+        return newJournal;
       } catch (err) {
-        console.error("Error adding journal:", err);
-        throw new Error("Failed to add journal");
+        throw new AuthenticationError("Invalid token");
       }
     },
 
-   
     editJournal: async (
       _,
       { journalId, sleepHours, mood, affirmation, gratitude, tasks, happiness, improvement },
@@ -142,22 +95,22 @@ const resolvers = {
         const updatedJournal = await Journal.findOneAndUpdate(
           { _id: journalId, user: context.user.id }, 
           { sleepHours, mood, affirmation, gratitude, tasks, happiness, improvement },
-          { new: true }
+          { new: true } 
         );
         if (!updatedJournal) {
           throw new Error("Journal not found or unauthorized");
         }
         return {
           ...updatedJournal._doc,
-          date: updatedJournal.createdAt.toISOString().split("T")[0] 
+          date: new Date(updatedJournal.date).toLocaleDateString("en-US", {
+            timeZone: "America/Los_Angeles" 
+          })
         };
       } catch (err) {
-        console.error("Error updating journal:", err);
-        throw new Error("Failed to update journal");
+        throw new AuthenticationError("Invalid token");
       }
     },
 
-   
     deleteJournal: async (_, { journalId }, context) => {
       if (!context.user) {
         throw new AuthenticationError("Not authenticated");
@@ -169,27 +122,7 @@ const resolvers = {
         }
         return "Journal deleted successfully";
       } catch (err) {
-        console.error("Error deleting journal:", err);
-        throw new Error("Failed to delete journal");
-      }
-    },
-
-    updateProfileImage: async (_, { imageUrl }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("Not authenticated");
-      }
-    
-      try {
-        const updatedUser = await User.findByIdAndUpdate(
-          context.user.id,
-          { profileImage: imageUrl }, // ✅ Update profileImage field
-          { new: true }
-        );
-    
-        return updatedUser;
-      } catch (err) {
-        console.error("Error updating profile image:", err);
-        throw new Error("Failed to update profile image");
+        throw new AuthenticationError("Invalid token");
       }
     },
   },
