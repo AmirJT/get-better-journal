@@ -5,7 +5,10 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
-    password: String!
+    profileImage: String!
+    createdAt: String!
+    totalEntries: Int!
+    moodAverage: String!
   }
 
   type Journal {
@@ -29,7 +32,7 @@ const typeDefs = gql`
 
   type Query {
     getJournals: [Journal] # Fetch all journals (Only for the logged-in user)
-    getUser: User # Fetch logged-in user details
+    getUser: User # Fetch logged-in user details with profile info and stats
   }
 
   type Mutation {
@@ -59,6 +62,8 @@ const typeDefs = gql`
     ): Journal
 
     deleteJournal(journalId: ID!): String
+
+    updateProfileImage(imageUrl: String!): User # ✅ Mutation to update profile picture
   }
 `;
 
