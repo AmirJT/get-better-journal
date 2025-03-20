@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  
+    --background-light: #e0f7fa; 
+    --text-light: #2a2d34;
+    --navbar-light: #b2ebf2; 
+    --button-light: #0288d1; 
+    --button-hover-light: #0277bd; 
+    --box-light: #e3f2fd;
+    --box-hover-light: #bbdefb; 
+    --border-light: #81d4fa;
+    --accent-light: #80cbc4;
+
+    --background-dark: #102027; 
+    --text-dark: #dbe5ea; 
+    --navbar-dark: #1b2a34; 
+    --button-dark: #00838f;
+    --button-hover-dark: #006064; 
+    --box-dark: #1c313a;
+    --box-hover-dark: #29434e; 
+    --border-dark: #546e7a; 
+    --accent-dark: #4f5b62; 
+}
+
+.light {
+    --background: var(--background-light);
+    --text-color: var(--text-light);
+    --navbar-bg: var(--navbar-light);
+    --button-color: var(--button-light);
+    --button-hover: var(--button-hover-light);
+    --box-bg: var(--box-light);
+    --box-hover: var(--box-hover-light);
+    --border-color: var(--border-light);
+    --accent-color: var(--accent-light);
+}
+
+
+.dark {
+    --background: var(--background-dark);
+    --text-color: var(--text-dark);
+    --navbar-bg: var(--navbar-dark);
+    --button-color: var(--button-dark);
+    --button-hover: var(--button-hover-dark);
+    --box-bg: var(--box-dark);
+    --box-hover: var(--box-hover-dark);
+    --border-color: var(--border-dark);
+    --accent-color: var(--accent-dark);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+.box {
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover {
+    background: var(--box-hover);
+    transform: scale(1.02);
+}
+
+input, textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--box-bg);
+    color: var(--text-color);
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid var(--button-color);
+    outline: none;
+}
+
+.footer {
+    background: var(--navbar-bg);
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .box {
+        padding: 15px;
+    }
+}
