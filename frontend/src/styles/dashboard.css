@@ -1,0 +1,162 @@
+.dashboard-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+  
+  .dashboard-container h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  
+  .add-journal-box {
+    background: var(--box-bg);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 25px auto;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-journal-box:hover {
+    transform: scale(1.03);
+    background: var(--box-hover);
+  }
+  
+  .add-journal-box h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+  
+  .add-journal-box button {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-journal-box button:hover {
+    background: var(--button-hover);
+  }
+  
+  .journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  
+  .journal-card {
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border-left: 8px solid var(--button-color);
+  }
+  
+  .journal-card:hover {
+    transform: scale(1.05);
+    background: var(--box-hover);
+  }
+  
+  .journal-card .journal-date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--button-color);
+    margin-bottom: 8px;
+  }
+  
+  .journal-card .affirmation {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+  }
+  
+  .journal-card .journal-preview {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    max-width: 100%;
+    text-align: left;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .journal-card .mood-tasks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 12px;
+    align-items: center;
+  }
+  
+  .journal-card .mood {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mood-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--border-color);
+  }
+  
+  .mood-circle.filled {
+    background: var(--button-color);
+  }
+  
+  .journal-card .tasks {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    text-align: right;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .journal-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .add-journal-box {
+      width: 95%;
+      padding: 25px;
+    }
+  
+    .journal-card {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .mood-circle {
+      width: 12px;
+      height: 12px;
+    }
+  }

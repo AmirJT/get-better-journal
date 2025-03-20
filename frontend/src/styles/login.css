@@ -1,0 +1,111 @@
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+
+.login-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+
+.login-container p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.login-box {
+    background: var(--box-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-2px);
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    background: var(--box-hover);
+    color: var(--text-color);
+    transition: border 0.3s ease;
+}
+
+.login-box input:focus {
+    border-color: var(--button-color);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: var(--button-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+    background: var(--button-hover);
+}
+
+.login-box button:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #ff4c4c;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.signup-link {
+    margin-top: 15px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.signup-link span {
+    color: var(--button-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.signup-link span:hover {
+    color: var(--button-hover);
+}
+
+@media screen and (max-width: 600px) {
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
