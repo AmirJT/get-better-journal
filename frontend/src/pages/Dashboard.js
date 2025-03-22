@@ -57,13 +57,17 @@ const Dashboard = () => {
 
    
       {selectedJournal && (
-        <JournalModal
-          journal={selectedJournal}
-          onClose={() => setSelectedJournal(null)}
-          onEdit={handleEdit} 
-          onDelete={handleDelete} 
-        />
-      )}
+  <div className="modal-overlay" onClick={() => setSelectedJournal(null)}>
+    <div className="modal-inner" onClick={(e) => e.stopPropagation()}>
+      <JournalModal
+        journal={selectedJournal}
+        onClose={() => setSelectedJournal(null)}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
+    </div>
+  </div>
+)}
 
       {editingJournal && (
         <EditJournal
