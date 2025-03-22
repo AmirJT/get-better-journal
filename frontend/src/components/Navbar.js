@@ -43,7 +43,7 @@ const Navbar = () => {
                                 Dashboard
                             </Link>
                             <Link to="/profile" className="nav-item" onClick={closeMenu}>
-                                My Profile
+                                Meditation
                             </Link>
                             <button className="nav-item logout" onClick={handleLogout}>
                                 Sign Out

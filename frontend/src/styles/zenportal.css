@@ -1,0 +1,143 @@
+.zen-portal {
+  height: 100vh;
+  width: 100%;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background 1s ease;
+  padding: 20px;
+  margin-top: -100px;
+}
+
+.avatar-wrapper {
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatar-lottie {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.breathing-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  transition: transform 4s ease-in-out, box-shadow 1s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.expand {
+  transform: scale(1.5);
+  box-shadow: 0 0 40px var(--accent-color);
+}
+
+.contract {
+  transform: scale(1);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.breathing-label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  transition: opacity 0.5s ease;
+  letter-spacing: 1px;
+}
+
+.countdown-label {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+.timer-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.timer-controls select {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--box-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.timer-controls button {
+  margin-left: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--button-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.timer-controls button:hover {
+  background: var(--button-hover);
+}
+
+.music-player {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.music-player select {
+  padding: 6px 12px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--box-bg);
+  color: var(--text-color);
+}
+
+.music-controls button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.music-controls button:hover {
+  background: var(--button-hover);
+}
+
+.breathing-animation {
+  width: 270px; 
+  height: 150px;
+  margin: 20px 20px 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breathing-animation lottie-player {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.voice-guidance {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.voice-guidance input {
+  margin-right: 8px;
+}

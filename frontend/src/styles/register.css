@@ -108,3 +108,27 @@
         padding: 20px;
     }
 }
+
+.signup-success-animation {
+    position: fixed;
+    bottom: 15px;
+    right: 50px;
+    width: 600px;
+    height: auto;
+    z-index: 999;
+    pointer-events: none;
+    animation: popIn 0.4s ease;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .signup-success-animation {
+      width: 130px;
+      bottom: 60px;
+      right: 20px;
+    }
+  }

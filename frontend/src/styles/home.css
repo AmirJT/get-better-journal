@@ -30,8 +30,7 @@
   text-align: left;
   padding: 50px;
   max-width: 700px; 
-  margin-top: 50px;
-  margin-right: -750px;
+  margin-right: -650px;
 }
 
 .chat-bubble {
@@ -115,7 +114,7 @@
 
 .loading-icon {
   margin-top: 15px;
-  width: 45px;
+  width: 90px;
   height: 45px;
   border: 5px solid var(--button-hover);
   border-top: 5px solid transparent;
@@ -200,27 +199,85 @@
 @media screen and (max-width: 768px) {
   .home-container {
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    overflow-y: auto;
   }
 
-  .image-container {
-    display: none;
+  .character-container {
+    position: static;
+    margin-bottom: 20px;
+    transform: none;
+    width: 60vw;
   }
 
   .chat-container {
+    flex: none;
+    width: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
   }
 
   .chat-bubble {
-    font-size: 1.2rem;
     width: 100%;
+    font-size: 1rem;
+    padding: 20px;
+    min-height: auto;
+    text-align: left;
+  }
+
+  .chat-bubble::after {
+    display: none;
+  }
+
+  .options {
+    gap: 12px;
+    margin-top: 16px;
   }
 
   .options button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .name-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  .start-button,
+  .cta-buttons button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-container p {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .loading-container {
     font-size: 1.1rem;
-    padding: 14px;
+    padding: 20px;
+  }
+
+  .loading-icon {
+    width: 35px;
+    height: 35px;
+    border-width: 4px;
   }
 }
