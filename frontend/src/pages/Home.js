@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import InteractiveCharacter from "../components/InteractiveCharacter"; // ✅ Import Character
+import InteractiveCharacter from "../components/InteractiveCharacter"; 
 import "../styles/home.css";
-
+import Lottie from "lottie-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -31,6 +31,15 @@ const Home = () => {
     { id: "desired_feeling", text: "How do you want to feel at night?", options: ["Accomplished", "Peaceful", "Inspired", "Grateful"] },
     { id: "life_improvement", text: "What’s one thing you want to improve?", options: ["Time management", "Self-confidence", "Work-life balance", "Emotional resilience"] }
   ];
+
+  const [lottieData, setLottieData] = useState(null);
+
+  useEffect(() => {
+    fetch("/loadingAnimation.json")
+      .then((res) => res.json())
+      .then((data) => setLottieData(data))
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     setFade("fade-in");
@@ -68,7 +77,8 @@ const Home = () => {
     const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
     if (!API_KEY) {
-      console.error("❌ OpenAI API Key is missing. Check your .env file.");
+      setAiResponse("⚠️ OpenAI API Key is missing. Please try again later.");
+      setLoading(false);
       return;
     }
 
@@ -103,8 +113,7 @@ const Home = () => {
 
       const data = await response.json();
       setAiResponse(data.choices[0]?.message?.content || "⚠️ AI response failed. Try again.");
-    } catch (error) {
-      console.error("❌ Error fetching AI response:", error);
+    } catch {
       setAiResponse("⚠️ An error occurred while generating your journaling guide.");
     } finally {
       setLoading(false);
@@ -113,7 +122,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* ✅ Replace static image with the interactive character */}
       <div className="character-container">
         <InteractiveCharacter />
       </div>
@@ -123,7 +131,14 @@ const Home = () => {
           {loading ? (
             <div className="loading-container">
               <p><strong>{name}</strong>, we are working on it! Getting you started with the best understanding of how to write your daily journals to get better 1% every day...</p>
-              <div className="loading-icon"></div>
+              {lottieData && (
+                <Lottie
+                  animationData={lottieData}
+                  loop
+                  autoplay
+                  style={{ width: "150px", height: "150px", marginTop: "20px" }}
+                />
+              )}
             </div>
           ) : aiResponse ? (
             <>
@@ -134,7 +149,6 @@ const Home = () => {
                 ))}
               </ul>
 
-              
               <div className="cta-container">
                 <p>✨ Now that you know how to write your journals, let’s begin! ✨</p>
                 <div className="cta-buttons">

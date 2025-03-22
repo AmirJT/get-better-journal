@@ -1,44 +1,109 @@
-/* Profile Page Layout */
-.profile-container {
+.meditation-container {
   text-align: center;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 60px auto;
   padding: 20px;
 }
 
-/* Profile Grid */
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-template-rows: repeat(2, 1fr); /* Two rows */
-  gap: 20px;
-  justify-items: center;
-  margin-top: 20px;
+.meditation-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Profile Box */
-.profile-box {
-  background: var(--box-bg);
+.grid-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 280px;
+}
+
+.meditation-box,
+.timer-box,
+.sound-box,
+.breathing-box {
+  background: var(--box-bg, #fff);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-center {
+  width: 240px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-lottie {
   width: 100%;
-  max-width: 300px;
-  transition: transform 0.2s ease, background 0.3s ease;
+  border-radius: 50%;
 }
 
-.profile-box:hover {
-  transform: scale(1.03);
-  background: var(--box-hover);
+.avatar-center:hover .avatar-lottie {
+  transform: scale(1.05) rotate(-1.5deg);
 }
 
-/* Profile Image */
-.profile-image {
+.avatar-glow {
+  animation: glowPulse 2s ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px #81c784; }
+  50% { box-shadow: 0 0 24px #66bb6a; }
+  100% { box-shadow: 0 0 10px #81c784; }
+}
+
+.click-tip {
+  font-style: italic;
+  margin-top: 8px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.breathing-circle {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 2px solid var(--button-color);
+  background: var(--button-color, #a5d6a7);
+  margin: 15px auto;
+  transition: transform 4s ease-in-out;
+}
+
+.breathing.breathing-circle {
+  animation: breathing-animation 4s infinite ease-in-out;
+}
+
+@keyframes breathing-animation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.timer-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.sound-box button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  background: var(--button-color, #81c784);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sound-box button:hover {
+  background: var(--button-hover, #66bb6a);
 }
