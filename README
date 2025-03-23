@@ -13,17 +13,17 @@ Welcome to **Get Better** — a full-stack journaling app designed to help users
 - Automatic date logging per user entry  
 
 ### 🧘 Meditation Experience (Profile Page)
-- Breathing circle animation synced to meditation pace  
+- Breathing animation synced to meditation pace  
 - Nature background audio with play/pause toggle  
 - Inspirational quote generator (on-click avatar)  
 - 5-minute meditation timer  
 - Interactive Lottie character (peaceful animations)  
 
 ### 🌱 Discover Page
-- Surprises  
-- What If challenges  
-- Emotion support  
-- More "Surprise Me" items  
+- Psychology insights  
+- "What If" journaling challenges  
+- Emotional well-being support  
+- 7-day journaling series & surprise content  
 
 ### 🔐 Authentication & Protection
 - Register / Login via JWT  
@@ -39,7 +39,7 @@ Welcome to **Get Better** — a full-stack journaling app designed to help users
 ### 🔁 Motivation Boosters
 - Daily motivational quote (local)  
 - Fun fact of the day (via Numbers API)  
-- Horoscope of your choice (select dropdown)  
+- Horoscope of your choice (dropdown selection)  
 
 ---
 
@@ -61,14 +61,14 @@ Welcome to **Get Better** — a full-stack journaling app designed to help users
 
 ### 🔁 DevOps
 - GitHub Actions (CI on frontend build)  
-- Render (for backend deployment)  
-- Netlify or local (frontend)  
+- Render (backend deployment)  
+- Netlify or local (frontend deployment)  
 
 ---
 
 ## 📂 Folder Structure
 
-```
+```bash
 get-better-journal/
 ├── backend/              # Express + GraphQL + MongoDB
 ├── frontend/             # React app
@@ -117,14 +117,14 @@ A simple CI workflow to check if the React frontend builds successfully on every
 
 📁 Located in:
 
-```
+```bash
 .github/workflows/build.yml
 ```
 
-Action Steps:
-- Checks out code  
-- Installs frontend dependencies  
-- Runs `npm run build`  
+**Action Steps:**
+- Checkout code  
+- Install frontend dependencies  
+- Run `npm run build`  
 
 ✅ **Pass** = React app builds successfully
 
