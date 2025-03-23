@@ -111,9 +111,9 @@
 
 .signup-success-animation {
     position: fixed;
-    bottom: 15px;
-    right: 50px;
-    width: 600px;
+    bottom: 25px;
+    right: 250px;
+    width: 300px;
     height: auto;
     z-index: 999;
     pointer-events: none;
