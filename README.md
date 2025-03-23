@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+# 📝 Get Better: Smart Personal Journal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Get Better** — a full-stack journaling app designed to help users become **1% better every day** through daily reflections, guided challenges, and an immersive meditation experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### 🧠 Journaling Dashboard
+- Add, edit, and delete personal journal entries
+- Mood selector with 5-level rating (visualized)
+- Tracks affirmation, gratitude, improvement, tasks, happiness
+- Automatic date logging per user entry
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🧘 Meditation Experience (Profile Page)
+- Breathing circle animation synced to meditation pace
+- Nature background audio with play/pause toggle
+- Inspirational quote generator (on click avatar)
+- 5-minute meditation timer
+- Interactive Lottie character (peaceful animations)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🌱 Discover Page
+- Psychology reminders
+- Daily Quotes
+- Daily surprises
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔐 Authentication & Protection
+- Register / Login via JWT
+- Apollo Client handles secured GraphQL queries
+- User-specific journaling data only
 
-### `npm run build`
+### 🎨 Interface & Theme
+- Fully responsive for mobile & desktop
+- Light/dark mode toggle
+- Hover effects & animated transitions
+- Lottie + sound integration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔁 Motivation Boosters
+- Daily motivational quote (local)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🧩 Frontend
+- React
+- Lottie-react
+- Custom CSS (no framework)
+- Apollo Client
+- React Router
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔧 Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- GraphQL + Apollo Server
+- JWT authentication
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🔁 DevOps
+- GitHub Actions (CI on frontend build)
+- Render (for backend deployment)
+- Netlify or local (frontend)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📂 Folder Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+get-better-journal/
+├── backend/              # Express + GraphQL + MongoDB
+├── frontend/             # React app
+├── public/               # Lottie files, audio files
+└── .github/workflows/    # GitHub Actions
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📦 Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/AmirJT/get-better-journal.git
+cd get-better-journal
+```
 
-### Analyzing the Bundle Size
+### 🔧 Backend
+```bash
+cd backend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 💻 Frontend
+```bash
+cd ../frontend
+npm install
+npm start
+```
 
-### Making a Progressive Web App
+Make sure your `.env` file in `/backend` includes:
+```
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+PORT=8000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ✅ GitHub Actions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A simple CI workflow to check if the React frontend builds successfully on every push to `main`.
 
-### Deployment
+📁 Located in:
+```
+.github/workflows/build.yml
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Action Steps:
+- Checks out code
+- Installs frontend dependencies
+- Runs `npm run build`
 
-### `npm run build` fails to minify
+✅ Pass = React app builds successfully
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+
+## 🙏 Acknowledgements
+
+- [LottieFiles](https://lottiefiles.com)
+- [ZenQuotes.io](https://zenquotes.io)
+- [OpenAI GPT](https://openai.com)
+
+---
+
+## 📄 License
+
+This project is built for academic and showcase purposes.  
+Created as part of a Full-Stack Web Development Bootcamp Final Project.
+
+---
+
+## ✨ Created By
+
+**Amir Jafari** 
+**Arman Abadian** 
+
