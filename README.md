@@ -143,6 +143,7 @@ Created as part of a Full-Stack Web Development Bootcamp Final Project.
 
 ## ✨ Created By
 
-**Amir Jafari** 
+**Amir Jafari**
+
 **Arman Abadian** 
 
