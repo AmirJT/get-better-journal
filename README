@@ -7,62 +7,62 @@ Welcome to **Get Better** — a full-stack journaling app designed to help users
 ## 🚀 Features
 
 ### 🧠 Journaling Dashboard
-- Add, edit, and delete personal journal entries
-- Mood selector with 5-level rating (visualized)
-- Tracks affirmation, gratitude, improvement, tasks, happiness
-- Automatic date logging per user entry
+- Add, edit, and delete personal journal entries  
+- Mood selector with 5-level rating (visualized)  
+- Tracks affirmation, gratitude, improvement, tasks, happiness  
+- Automatic date logging per user entry  
 
 ### 🧘 Meditation Experience (Profile Page)
-- Breathing circle animation synced to meditation pace
-- Nature background audio with play/pause toggle
-- Inspirational quote generator (on click avatar)
-- 5-minute meditation timer
-- Interactive Lottie character (peaceful animations)
+- Breathing circle animation synced to meditation pace  
+- Nature background audio with play/pause toggle  
+- Inspirational quote generator (on-click avatar)  
+- 5-minute meditation timer  
+- Interactive Lottie character (peaceful animations)  
 
 ### 🌱 Discover Page
-- Surprises
-- What If challenges
-- Emotion supports
-- more Suprise me items
+- Surprises  
+- What If challenges  
+- Emotion support  
+- More "Surprise Me" items  
 
 ### 🔐 Authentication & Protection
-- Register / Login via JWT
-- Apollo Client handles secured GraphQL queries
-- User-specific journaling data only
+- Register / Login via JWT  
+- Apollo Client handles secured GraphQL queries  
+- User-specific journaling data only  
 
 ### 🎨 Interface & Theme
-- Fully responsive for mobile & desktop
-- Light/dark mode toggle
-- Hover effects & animated transitions
-- Lottie + sound integration
+- Fully responsive for mobile & desktop  
+- Light/dark mode toggle  
+- Hover effects & animated transitions  
+- Lottie + sound integration  
 
 ### 🔁 Motivation Boosters
-- Daily motivational quote (local)
-- Fun fact of the day (via Numbers API)
-- Horoscope of your choice (select dropdown)
+- Daily motivational quote (local)  
+- Fun fact of the day (via Numbers API)  
+- Horoscope of your choice (select dropdown)  
 
 ---
 
 ## ⚙️ Tech Stack
 
 ### 🧩 Frontend
-- React
-- Lottie-react
-- Custom CSS (no framework)
-- Apollo Client
-- React Router
+- React  
+- Lottie-react  
+- Custom CSS (no framework)  
+- Apollo Client  
+- React Router  
 
 ### 🔧 Backend
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- GraphQL + Apollo Server
-- JWT authentication
+- Node.js  
+- Express.js  
+- MongoDB with Mongoose  
+- GraphQL + Apollo Server  
+- JWT authentication  
 
 ### 🔁 DevOps
-- GitHub Actions (CI on frontend build)
-- Render (for backend deployment)
-- Netlify or local (frontend)
+- GitHub Actions (CI on frontend build)  
+- Render (for backend deployment)  
+- Netlify or local (frontend)  
 
 ---
 
@@ -86,24 +86,27 @@ cd get-better-journal
 ```
 
 ### 🔧 Backend
+
 ```bash
 cd backend
 npm install
 npm start
 ```
 
+Make sure your `.env` file in `/backend` includes:
+
+```env
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+PORT=8000
+```
+
 ### 💻 Frontend
+
 ```bash
 cd ../frontend
 npm install
 npm start
-```
-
-Make sure your `.env` file in `/backend` includes:
-```
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_jwt_secret
-PORT=8000
 ```
 
 ---
@@ -113,26 +116,27 @@ PORT=8000
 A simple CI workflow to check if the React frontend builds successfully on every push to `main`.
 
 📁 Located in:
+
 ```
 .github/workflows/build.yml
 ```
 
 Action Steps:
-- Checks out code
-- Installs frontend dependencies
-- Runs `npm run build`
+- Checks out code  
+- Installs frontend dependencies  
+- Runs `npm run build`  
 
-✅ Pass = React app builds successfully
+✅ **Pass** = React app builds successfully
 
 ---
 
 ## 🙏 Acknowledgements
 
-- [LottieFiles](https://lottiefiles.com)
-- [ZenQuotes.io](https://zenquotes.io)
-- [NumbersAPI](http://numbersapi.com)
-- [Ohmanda Horoscope API](https://ohmanda.com/api/horoscope)
-- [OpenAI GPT](https://openai.com)
+- [LottieFiles](https://lottiefiles.com)  
+- [ZenQuotes.io](https://zenquotes.io)  
+- [NumbersAPI](http://numbersapi.com)  
+- [Ohmanda Horoscope API](https://ohmanda.com/api/horoscope)  
+- [OpenAI GPT](https://openai.com)  
 
 ---
 
@@ -147,4 +151,5 @@ Created as part of a Full-Stack Web Development Bootcamp Final Project.
 
 **Amir Jafari**  
 **Arman Abadian**  
+
 > _“A better you starts with a better journal.”_
