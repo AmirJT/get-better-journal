@@ -141,8 +141,11 @@
     }
     
     .menu-toggle:hover {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.0);
         transform: rotate(90deg);
+        transition: transform 0.3s ease;
+        border: none;
+        cursor: pointer;
     }
 
     .nav-item {
@@ -177,7 +180,7 @@
 }
 
 .dark-mode-toggle {
-    width: 50px;
+    width: 42px;
     height: 24px;
     background: var(--box-bg);
     border-radius: 20px;
@@ -187,22 +190,25 @@
     cursor: pointer;
     padding: 2px;
     transition: background 0.3s ease;
-}
-
-.toggle-circle {
+    z-index: 1002;
+  }
+  
+  .toggle-circle {
     width: 20px;
     height: 20px;
     background: var(--button-color);
     border-radius: 50%;
     position: absolute;
+    top: 2px;
+    left: 2px;
     transition: transform 0.3s ease;
+  }
+  
+  .light-mode {
+    transform: translateX(20px);
 }
 
-.light-mode {
-    transform: translateX(26px);
-}
-
-.dark-mode {
+  .dark-mode {
     transform: translateX(0);
 }
 
