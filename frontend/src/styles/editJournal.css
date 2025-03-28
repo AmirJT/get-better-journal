@@ -1,4 +1,4 @@
-/* 🔲 Container */
+
 .edit-journal-container {
   background: var(--box-bg);
   padding: 25px;
@@ -15,7 +15,7 @@
   margin-bottom: 15px;
 }
 
-/* 🔲 Form Inputs */
+
 .edit-journal-container label {
   display: block;
   font-weight: bold;
@@ -40,7 +40,7 @@
   height: 100px;
 }
 
-/* 🔲 Buttons */
+
 .edit-journal-container button {
   margin-top: 15px;
   padding: 12px 20px;
@@ -73,14 +73,14 @@
   background: darkred;
 }
 
-/* 🔲 Error */
+
 .error-message {
   color: red;
   margin-top: 10px;
   font-size: 1rem;
 }
 
-/* 🔲 Popup Overlay */
+
 .popup {
   position: fixed;
   top: 0;
@@ -94,7 +94,7 @@
   z-index: 999;
 }
 
-/* 🔲 Popup Content */
+
 .popup-content.edit-popup {
   background: var(--box-bg);
   padding: 30px;
@@ -106,7 +106,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   text-align: center;
 
-  /* ✅ Smooth animation */
+  
   animation: popupFadeScale 0.3s ease forwards;
 }
 
@@ -121,13 +121,13 @@
   }
 }
 
-/* 🔲 Headings */
+
 .popup-content h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
-/* 🔲 Layout Rows */
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -146,12 +146,12 @@
   margin-bottom: 5px;
 }
 
-/* 🔲 Mood Selector */
+
 .mood-selector {
   display: flex;
   justify-content: center;
   gap: 5px;
-  flex-wrap: wrap; /* ✅ Fix for mobile wrapping */
+  flex-wrap: wrap; 
 }
 
 .mood-circle {
@@ -167,7 +167,7 @@
   background: var(--button-color);
 }
 
-/* 🔲 Inputs in popup */
+
 .popup-content input,
 .popup-content textarea {
   width: 100%;
@@ -185,13 +185,13 @@
   height: 100px;
 }
 
-/* 🔲 Centered Task Inputs */
+
 .centered-group {
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* 🔲 Popup Buttons */
+
 .popup-content button {
   margin-top: 15px;
   padding: 12px 20px;
@@ -208,7 +208,7 @@
   background: var(--button-hover);
 }
 
-/* 🔲 Cancel Button */
+
 .close-btn {
   background: red;
   color: white;
@@ -225,14 +225,14 @@
   background: darkred;
 }
 
-/* 🔲 Error Message */
+
 .error-message {
   color: red;
   margin-top: 10px;
   font-size: 1rem;
 }
 
-/* 🔲 Mobile Responsiveness */
+
 @media screen and (max-width: 768px) {
   .popup-content.edit-popup {
     width: 95%;
